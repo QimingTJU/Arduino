@@ -3,8 +3,11 @@
 
 
 //初始化
-int In1 = 4;
+int In1 = 6;
 int In2 = 7;
+int In3 = 4;
+int In4 = 5;
+
 int Sensor_x1 = 11;
 int Sensor_x2 = 10;
 int Sensor_x3 = 9;
@@ -12,16 +15,19 @@ int Sensor_x4 = 8;
 
 
 
-#line 13 "d:\\arduino\\arduino_src\\testdelay1\\testdelay.ino"
+#line 16 "d:\\arduino\\arduino_src\\testdelay1\\testdelay.ino"
 void setup();
-#line 27 "d:\\arduino\\arduino_src\\testdelay1\\testdelay.ino"
+#line 33 "d:\\arduino\\arduino_src\\testdelay1\\testdelay.ino"
 void loop();
-#line 13 "d:\\arduino\\arduino_src\\testdelay1\\testdelay.ino"
+#line 16 "d:\\arduino\\arduino_src\\testdelay1\\testdelay.ino"
 void setup() 
 {
   // 初始化I/O口
     pinMode(In1,OUTPUT);
     pinMode(In2,OUTPUT);
+    pinMode(In3,OUTPUT);
+    pinMode(In4,OUTPUT);
+
     pinMode(Sensor_x1,INPUT);
     pinMode(Sensor_x2,INPUT);
     pinMode(Sensor_x3,INPUT);
@@ -43,11 +49,15 @@ void loop()
     {
         digitalWrite(In1, LOW);
         digitalWrite(In2, HIGH);
+        digitalWrite(In3, LOW);
+        digitalWrite(In4, HIGH);
     }
     else
     {
         digitalWrite(In1, LOW);
         digitalWrite(In2, LOW);
+        digitalWrite(In3, LOW);
+        digitalWrite(In4, LOW);
 
     }
 
