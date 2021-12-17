@@ -124,6 +124,7 @@ void loop()
     {
         Throw_Place_Count++;
     }
+    
 
     //最终停止的条件
     if (Throw_Place_Count == 4)
