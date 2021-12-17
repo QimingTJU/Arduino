@@ -45,33 +45,33 @@ void Go_Straight()
 void Slow_TurnLeft()
 {
     digitalWrite(R_IN1,0x0);
-    analogWrite(R_IN2,255);
+    analogWrite(R_IN2,220);
     digitalWrite(L_IN3,0x0);
-    analogWrite(L_IN4,220);
+    analogWrite(L_IN4,200);
 }
 
 void Slow_TurnRight()
 {
     digitalWrite(R_IN1,0x0);
-    analogWrite(R_IN2,220);
+    analogWrite(R_IN2,200);
     digitalWrite(L_IN3,0x0);
-    analogWrite(L_IN4,255);
+    analogWrite(L_IN4,220);
 }
 
 void Fast_TurnLeft()
 {
     digitalWrite(R_IN1,0x0);
-    analogWrite(R_IN2,255);
+    analogWrite(R_IN2,220);
     digitalWrite(L_IN3,0x0);
-    analogWrite(L_IN4,200);
+    analogWrite(L_IN4,150);
 }
 
 void Fast_TurnRight()
 {
     digitalWrite(R_IN1,0x0);
-    analogWrite(R_IN2,200);
+    analogWrite(R_IN2,150);
     digitalWrite(L_IN3,0x0);
-    analogWrite(L_IN4,255);
+    analogWrite(L_IN4,220);
 }
 
 void Stop()
