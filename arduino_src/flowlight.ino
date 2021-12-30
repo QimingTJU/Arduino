@@ -1,30 +1,25 @@
-/*
-Arduino制作流水灯
-<a href="http://www.arduino.cn/" target="_blank">http://www.arduino.cn/</a>
-*/
+#include <Servo.h>
 
-void setup() 
-{
-  // 初始化I/O口
-  for (int i = 2; i < 6; i++)
-    pinMode(i,OUTPUT);
+Servo myservo;  // 定义Servo对象来控制
+int pos = 0;    // 角度存储变量
+int count = 0;
+
+void toufang() {
+  for (pos = 0; pos <= 180; pos ++) { // 0°到180°
+    myservo.write(pos);              // 舵机角度写入
+    delay(5);                       // 等待转动到指定角度
+  }
+  delay(10);
+  for (pos = 180; pos >= 0; pos --) { // 从180°到0°
+    myservo.write(pos);              // 舵机角度写入
+    delay(5);                       // 等待转动到指定角度
+  }
+  count += 1;
+}
+void setup() {
+  myservo.attach(9);
 }
 
-void loop() 
-{
-    
-  // 从引脚2到引脚4，逐个点亮LED，等待1秒再熄灭LED
-  for (int i = 2; i < 5; i++)
-  {
-    digitalWrite(i,HIGH);
-    delay(1000);
-    digitalWrite(i,LOW);   
-  }
-  // 从引脚5到引脚3，逐个点亮LED，等待1秒再熄灭LED
-  for(int i = 5; i > 2; i--)
-  {
-    digitalWrite(i,HIGH);
-    delay(1000);
-    digitalWrite(i,LOW);
-  } 
+void loop() {
+    toufang();
 }
